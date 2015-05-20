@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SecondActivity"
+            android:name=".app.SecondActivity"
             android:label="@string/title_activity_second"
             android:parentActivityName=".app.Main" >
             <meta-data
