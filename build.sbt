@@ -10,5 +10,7 @@ libraryDependencies ++= Seq(
   "com.android.support" % "support-v4" % "22.1.1",
   "com.android.support" % "appcompat-v7" % "22.1.1",
   "com.android.support" % "recyclerview-v7" % "22.1.1",
-  "com.melnykov" % "floatingactionbutton" % "1.3.0"
+  "com.melnykov" % "floatingactionbutton" % "1.3.0",
+
+  "im.tox" %% "tox4j" % "0.0.0-SNAPSHOT"
 )
