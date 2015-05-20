@@ -1,9 +1,10 @@
-scalaVersion := "2.11.6"
+// General settings
+organization  := "im.tox"
+name          := "toktok"
+version       := "0.0.0-SNAPSHOT"
+scalaVersion  := "2.11.6"
 
-import android.Keys._
-
-android.Plugin.androidBuild
-
+// Dependencies.
 libraryDependencies ++= Seq(
   "com.android.support" % "gridlayout-v7" % "22.1.1",
   "com.android.support" % "support-v4" % "22.1.1",

@@ -1,6 +1,6 @@
-package im.tox.toktok.app;
+package im.tox.toktok.app
 
-import android.test.ActivityInstrumentationTestCase2;
+import android.test.ActivityInstrumentationTestCase2
 
 /**
  * This is a simple framework for a test of an Application.  See
@@ -12,10 +12,4 @@ import android.test.ActivityInstrumentationTestCase2;
  * -e class im.tox.toktok.MainTest \
  * im.tox.toktok.tests/android.test.InstrumentationTestRunner
  */
-public class MainTest extends ActivityInstrumentationTestCase2<Main> {
-
-    public MainTest() {
-        super("im.tox.toktok", Main.class);
-    }
-
-}
+class MainTest extends ActivityInstrumentationTestCase2[Main]("im.tox.toktok", classOf[Main])
