@@ -1,7 +1,6 @@
 // General settings
 organization  := "im.tox"
 name          := "toktok"
-version       := "0.0.0-SNAPSHOT"
 scalaVersion  := "2.11.6"
 
 // Dependencies.
@@ -12,5 +11,5 @@ libraryDependencies ++= Seq(
   "com.android.support" % "recyclerview-v7" % "22.1.1",
   "com.melnykov" % "floatingactionbutton" % "1.3.0",
 
-  "im.tox" %% "tox4j" % "0.0.0-SNAPSHOT"
+  organization.value %% "tox4j" % version.value
 )
