@@ -2,6 +2,8 @@
 <resources>
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+    <style name="AppTheme.Dark" parent="AppTheme">
+        <item name="android:windowBackground">@color/base_color_dark</item>
     </style>
 </resources>

@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Basic colors -->
+
+    <item name="white" type="color">#ffffff</item>
+
+    <!-- App background colors -->
+
+    <item name="base_color_light" type="color">#FAFAFA</item>
+    <item name="base_color_dark" type="color">#232228</item>
+
+    <!-- Toolbar colors -->
+
+    <item name="base_color_dark_toolbar" type="color">#2B2A30</item>
+    <item name="base_color_dark_toolbar_text" type="color">#212121</item>
+
+
 </resources>

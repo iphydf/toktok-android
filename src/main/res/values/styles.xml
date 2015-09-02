@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-
+        <item name="android:windowBackground">@color/base_color_light</item>
     </style>
+    <style name="AppTheme.Dark" parent="AppTheme">
+        <item name="android:windowBackground">@color/base_color_dark</item>
+    </style>
+
 </resources>

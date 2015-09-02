@@ -15,6 +15,7 @@ repositories {
 
     mavenCentral()
     mavenLocal()
+    jcenter()
 
 }
 
@@ -34,6 +35,11 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile("proguard-android.txt"), 'proguard-rules.pro'
         }
+
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), 'proguard-rules.pro'
+        }
     }
 }
 
@@ -45,5 +51,5 @@ dependencies {
     compile 'com.android.support:palette-v7:23.0.0'
     compile 'com.android.support:design:23.0.0'
     //compile "im.tox:tox4j_2.11:0.0.0-SNAPSHOT"
-    compile files('src/main/libs/realm-0.82.1.jar')
+    compile 'io.realm:realm-android:0.82.1'
 }
