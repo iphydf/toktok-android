@@ -91,7 +91,7 @@ class Main extends AppCompatActivity {
 
     db.commitTransaction()
 
-*/
+
 
     db.beginTransaction()
 
@@ -99,11 +99,8 @@ class Main extends AppCompatActivity {
 
     db.commitTransaction()
 
-
-
+*/
     mViewPager.setCurrentItem(1)
-
-
 
   }
 

@@ -73,6 +73,7 @@ public class LayoutOnTop extends ViewGroup {
             case MotionEvent.ACTION_MOVE: {
                 if (mInitialMotionY - y < 0 && mScrollMark == mScroll.getBottom()) {
                     childScrollActive = false;
+                    Log.d("TokTok","Onlock");
                     return true;
                 }
                 break;
@@ -112,6 +113,9 @@ public class LayoutOnTop extends ViewGroup {
                         smoothSlideTo(0);
                         return false;
                     } else if (dy < 0) {
+
+                        Log.d("TokTok","Down");
+
                         smoothSlideTo(1);
 
                         Handler handler = new Handler();
@@ -122,7 +126,6 @@ public class LayoutOnTop extends ViewGroup {
                             }
                         };
                         handler.postDelayed(r, 500);
-
                     }
                     break;
                 }
@@ -191,7 +194,7 @@ public class LayoutOnTop extends ViewGroup {
 
         @Override
         public boolean tryCaptureView(View child, int pointerId) {
-            return child == mChild;
+            return child == mChild || child == mScroll;
         }
 
         @Override
