@@ -21,10 +21,10 @@ repositories {
 
 android {
     compileSdkVersion "android-23"
-    buildToolsVersion "23.0.0"
+    buildToolsVersion "23.0.1"
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 15
         targetSdkVersion 23
         multiDexEnabled true
     }
@@ -32,12 +32,11 @@ android {
     buildTypes {
         release {
             minifyEnabled true
-            shrinkResources true
             proguardFiles getDefaultProguardFile("proguard-android.txt"), 'proguard-rules.pro'
         }
 
         debug {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile("proguard-android.txt"), 'proguard-rules.pro'
         }
     }
@@ -45,11 +44,24 @@ android {
 
 dependencies {
     compile 'org.scala-lang:scala-library:2.11.7'
-    compile 'com.android.support:appcompat-v7:23.0.0'
-    compile 'com.android.support:recyclerview-v7:23.0.0'
-    compile 'com.android.support:cardview-v7:23.0.0'
-    compile 'com.android.support:palette-v7:23.0.0'
-    compile 'com.android.support:design:23.0.0'
+    // android support libraries
+    compile 'com.android.support:appcompat-v7:23.1.0'
+    compile 'com.android.support:recyclerview-v7:23.1.0'
+    compile 'com.android.support:cardview-v7:23.1.0'
+    compile 'com.android.support:palette-v7:23.1.0'
+    compile 'com.android.support:design:23.1.0'
     //compile "im.tox:tox4j_2.11:0.0.0-SNAPSHOT"
+
+    // db library
     compile 'io.realm:realm-android:0.82.1'
+    // tab bar library
+    compile 'com.jpardogo.materialtabstrip:library:1.1.0'
+    // sticky header of the recycler views
+    compile 'com.tonicartos:superslim:0.4.13'
+    // circular images support
+    compile 'de.hdodenhof:circleimageview:1.3.0'
+    // image loading library
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    // ripple effect support for the older
+    compile 'com.balysv:material-ripple:1.0.2'
 }
