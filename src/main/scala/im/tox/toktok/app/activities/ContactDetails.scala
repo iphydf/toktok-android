@@ -22,13 +22,11 @@ import im.tox.toktok.app.view.widgets.LayoutOnTop.LayoutOnTopCallback
 import im.tox.toktok.app.views.adapters.ProfileTabsAdapter
 import io.realm.Realm
 
-
 class ContactDetails extends AppCompatActivity {
 
   var db: Realm = _
-  var mLayoutOnTop : LayoutOnTop = _
+  var mLayoutOnTop: LayoutOnTop = _
   var mTaskDescription: TaskDescription = _
-
 
   override protected def onCreate(savedInstanceState: Bundle): Unit = {
 
@@ -67,9 +65,8 @@ class ContactDetails extends AppCompatActivity {
     var toolbarHeight = 0
 
     val tv = new TypedValue()
-    if (getTheme.resolveAttribute(android.R.attr.actionBarSize, tv, true))
-    {
-      toolbarHeight = TypedValue.complexToDimensionPixelSize(tv.data,getResources.getDisplayMetrics)
+    if (getTheme.resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
+      toolbarHeight = TypedValue.complexToDimensionPixelSize(tv.data, getResources.getDisplayMetrics)
     }
 
     val statusBarHeight = getStatusBarHeight
@@ -119,8 +116,7 @@ class ContactDetails extends AppCompatActivity {
           friend.setFav(false)
           mFav.setBackgroundTintList(null)
           mFav.setImageResource(R.drawable.fab_fav_line)
-        }
-        else {
+        } else {
           friend.setFav(true)
           mFav.setBackgroundTintList(ColorStateList.valueOf(ColorUtils.mixTwoColors(friend.getColor, Color.WHITE, 0.75f)))
           mFav.setImageResource(R.drawable.fab_fav)
@@ -133,8 +129,7 @@ class ContactDetails extends AppCompatActivity {
 
     val logoBitmap = BitmapFactory.decodeResource(getResources, R.mipmap.ic_launcher)
 
-
-    mTaskDescription = new TaskDescription("TokTok - "+friend.getName, logoBitmap, friendColor)
+    mTaskDescription = new TaskDescription("TokTok - " + friend.getName, logoBitmap, friendColor)
     setTaskDescription(mTaskDescription)
 
   }

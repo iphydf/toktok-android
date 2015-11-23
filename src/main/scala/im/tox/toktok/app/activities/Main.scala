@@ -51,9 +51,8 @@ class Main extends AppCompatActivity {
     // Loading the app preferences (First app run)
     val appSettings = getSharedPreferences(PREFS_NAME, 0)
 
-    ui_main_color = Color.parseColor(appSettings.getString("ui_main_color","#FF9800"))
-    ui_dark_mode = appSettings.getBoolean("ui_dark_theme",false)
-
+    ui_main_color = Color.parseColor(appSettings.getString("ui_main_color", "#FF9800"))
+    ui_dark_mode = appSettings.getBoolean("ui_dark_theme", false)
 
     // Loading the ui according with the DB
 
@@ -75,7 +74,6 @@ class Main extends AppCompatActivity {
     initDrawer()
     initFAB()
     initViewPager()
-
 
     //Launching the chats by default
     /*
@@ -130,8 +128,7 @@ class Main extends AppCompatActivity {
       override def onPageSelected(position: Int): Unit = {
         if (position == 1) {
           mFAB.show()
-        }
-        else {
+        } else {
           mFAB.hide()
         }
       }
@@ -196,7 +193,6 @@ class Main extends AppCompatActivity {
 
     val drawerList = findViewById(R.id.drawer_list).asInstanceOf[LinearLayout]
 
-
     val viewListener = new OnClickListener {
       override def onClick(v: View): Unit = {
 
@@ -204,8 +200,8 @@ class Main extends AppCompatActivity {
 
         v.getId match {
 
-          case R.id.drawer_list_friends => mViewPager.setCurrentItem(0)
-          case R.id.drawer_list_chats => mViewPager.setCurrentItem(1)
+          case R.id.drawer_list_friends  => mViewPager.setCurrentItem(0)
+          case R.id.drawer_list_chats    => mViewPager.setCurrentItem(1)
           case R.id.drawer_list_call_log => mViewPager.setCurrentItem(2)
           case R.id.drawer_list_settings => startActivity(new Intent(Main.this, classOf[Settings]))
 

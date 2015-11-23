@@ -1,7 +1,5 @@
 package im.tox.toktok.app.fragments
 
-import java.io.Serializable
-
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -12,8 +10,8 @@ import im.tox.toktok.R
 import im.tox.toktok.app.activities.ContactDetails
 import im.tox.toktok.app.models.Friend
 import im.tox.toktok.app.views.adapters.{HomeFriendsAdapter, HomeFriendsClick}
-import im.tox.toktok.app.views.widgets.{FriendLayout, FriendLayoutCallback}
-import io.realm.Realm
+import im.tox.toktok.app.views.widgets.FriendLayout
+import io.realm.{Realm, Sort}
 
 class HomeFriends(db: Realm) extends Fragment with HomeFriendsClick {
 
@@ -27,7 +25,7 @@ class HomeFriends(db: Realm) extends Fragment with HomeFriendsClick {
     mRecylerView = baseView.findViewById(R.id.recycler_view).asInstanceOf[RecyclerView]
     mRecylerView.setLayoutManager(new LayoutManager(getActivity))
 
-    val list_friends = db.where(classOf[Friend]).findAllSorted("name", true)
+    val list_friends = db.where(classOf[Friend]).findAllSorted("name", Sort.ASCENDING)
 
     mRecylerView.setAdapter(new HomeFriendsAdapter(getContext, list_friends, this))
 
@@ -37,8 +35,8 @@ class HomeFriends(db: Realm) extends Fragment with HomeFriendsClick {
 
   def onClick(friend: Friend): Unit = {
 
-    val intent = new Intent(getActivity,classOf[ContactDetails])
-    intent.putExtra("friendID",friend.getToxID)
+    val intent = new Intent(getActivity, classOf[ContactDetails])
+    intent.putExtra("friendID", friend.getToxID)
     getActivity.startActivity(intent)
 
   }

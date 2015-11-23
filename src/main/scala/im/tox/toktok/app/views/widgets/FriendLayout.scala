@@ -18,7 +18,6 @@ import im.tox.toktok.app.view.widgets.LayoutOnTop
 import im.tox.toktok.app.views.adapters.ProfileTabsAdapter
 import io.realm.Realm
 
-
 class FriendLayout(activity: FragmentActivity, friend: Friend, db: Realm, callback: FriendLayoutCallback) {
 
   var layoutOnTop = new LayoutOnTop(activity)
@@ -97,8 +96,7 @@ class FriendLayout(activity: FragmentActivity, friend: Friend, db: Realm, callba
         friend.setFav(false)
         mFav.setBackgroundTintList(null)
         mFav.setImageResource(R.drawable.fab_fav_line)
-      }
-      else {
+      } else {
         friend.setFav(true)
         mFav.setBackgroundTintList(ColorStateList.valueOf(ColorUtils.mixTwoColors(friend.getColor, Color.WHITE, 0.75f)))
         mFav.setImageResource(R.drawable.fab_fav)
@@ -114,9 +112,6 @@ class FriendLayout(activity: FragmentActivity, friend: Friend, db: Realm, callba
   val mNestedScroll = contactLayout.findViewById(R.id.nested_layout)
 
   activity.addContentView(layoutOnTop, params)
-
-
-
 
   def getStatusBarHeight: Int = {
     var result = 0

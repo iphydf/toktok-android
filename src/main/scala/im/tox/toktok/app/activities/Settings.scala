@@ -9,15 +9,14 @@ import im.tox.toktok.R
 import im.tox.toktok.app.models.ApplicationPreferences
 import io.realm.Realm
 
-class Settings extends AppCompatActivity{
+class Settings extends AppCompatActivity {
 
   var db: Realm = _
   var ui_color: ApplicationPreferences = _
   var ui_dark_mode: ApplicationPreferences = _
   var ui_text_dark: ApplicationPreferences = _
 
-
-  var theme_switch : Switch = _
+  var theme_switch: Switch = _
 
   override protected def onCreate(savedInstanceState: Bundle): Unit = {
 
@@ -31,8 +30,8 @@ class Settings extends AppCompatActivity{
       val setting = ui_list.get(i)
 
       setting.getField match {
-        case "ui_color" => ui_color = setting
-        case "ui_dark_text" => ui_text_dark = setting
+        case "ui_color"      => ui_color = setting
+        case "ui_dark_text"  => ui_text_dark = setting
         case "ui_dark_theme" => ui_dark_mode = setting
 
       }
@@ -56,16 +55,15 @@ class Settings extends AppCompatActivity{
 
         db.beginTransaction()
 
-        if(isChecked){
+        if (isChecked) {
           ui_dark_mode.setFieldValue(1)
-        }
-        else{
+        } else {
           ui_dark_mode.setFieldValue(0)
         }
 
         db.commitTransaction()
 
-        startActivity(new Intent(Settings.this,classOf[Settings]))
+        startActivity(new Intent(Settings.this, classOf[Settings]))
         finish()
 
       }

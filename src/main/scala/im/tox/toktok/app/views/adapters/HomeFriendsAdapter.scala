@@ -18,7 +18,7 @@ import io.realm.RealmResults
 
 import scala.collection.mutable.ListBuffer
 
-class HomeFriendsAdapter(context: Context, list: RealmResults[Friend],homeFriendsClick: HomeFriendsClick) extends RecyclerView.Adapter[RecyclerView.ViewHolder] {
+class HomeFriendsAdapter(context: Context, list: RealmResults[Friend], homeFriendsClick: HomeFriendsClick) extends RecyclerView.Adapter[RecyclerView.ViewHolder] {
 
   private var friendsList: ListBuffer[Item] = _
   indexList()
@@ -27,7 +27,7 @@ class HomeFriendsAdapter(context: Context, list: RealmResults[Friend],homeFriend
 
     if (viewType == 0) {
       val layout = LayoutInflater.from(viewGroup.getContext).inflate(R.layout.fragment_home_friends_item, viewGroup, false)
-      val layoutViewHolder = new HomeFriendsViewHolder(layout,homeFriendsClick)
+      val layoutViewHolder = new HomeFriendsViewHolder(layout, homeFriendsClick)
       layout.setOnClickListener(layoutViewHolder)
       layoutViewHolder
 
@@ -48,8 +48,7 @@ class HomeFriendsAdapter(context: Context, list: RealmResults[Friend],homeFriend
       viewHolder.asInstanceOf[HomeFriendsStickyHeader].mHeaderText.setText(item.getContent.asInstanceOf[String])
       lp.headerDisplay = LayoutManager.LayoutParams.HEADER_STICKY
       lp.isHeader = true
-    }
-    else {
+    } else {
       val friendInfo = item.getContent.asInstanceOf[Friend]
       val viewHolderContact = viewHolder.asInstanceOf[HomeFriendsViewHolder]
       viewHolderContact.mItemText.setText(friendInfo.getName)
@@ -64,7 +63,7 @@ class HomeFriendsAdapter(context: Context, list: RealmResults[Friend],homeFriend
         })
         .build()
 
-      picasso.load("file://" + context.getFilesDir + "/" + friendInfo.getToxID + ".png").resize(144,144).centerCrop().into(viewHolderContact.mItemImage)
+      picasso.load("file://" + context.getFilesDir + "/" + friendInfo.getToxID + ".png").resize(144, 144).centerCrop().into(viewHolderContact.mItemImage)
 
     }
 
@@ -106,10 +105,10 @@ class HomeFriendsAdapter(context: Context, list: RealmResults[Friend],homeFriend
 
 }
 
-private final class HomeFriendsViewHolder(itemView: View,homeFriendsClick: HomeFriendsClick) extends RecyclerView.ViewHolder(itemView) with OnClickListener{
+private final class HomeFriendsViewHolder(itemView: View, homeFriendsClick: HomeFriendsClick) extends RecyclerView.ViewHolder(itemView) with OnClickListener {
   val mItemText = itemView.findViewById(R.id.item_title).asInstanceOf[TextView]
   val mItemImage = itemView.findViewById(R.id.item_photo).asInstanceOf[CircleImageView]
-  var itemID:Friend = _
+  var itemID: Friend = _
 
   def onClick(view: View) = {
     homeFriendsClick.onClick(itemID)
@@ -118,7 +117,7 @@ private final class HomeFriendsViewHolder(itemView: View,homeFriendsClick: HomeF
 }
 
 trait HomeFriendsClick {
-  def onClick(friend : Friend)
+  def onClick(friend: Friend)
 }
 
 private final class HomeFriendsStickyHeader(itemView: View) extends RecyclerView.ViewHolder(itemView) {

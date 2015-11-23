@@ -11,7 +11,6 @@ import im.tox.toktok.R
 import im.tox.toktok.app.fragments.{HomeFriends, HomeCallLog, HomeChats}
 import io.realm.Realm
 
-
 class HomeTabsAdapter(db: Realm, fm: FragmentManager, context: Context) extends FragmentPagerAdapter(fm) with CustomTabProvider {
 
   private final val ICONS = Array(R.drawable.menu_friends, R.drawable.menu_chats, R.drawable.menu_call)
