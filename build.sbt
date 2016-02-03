@@ -49,6 +49,21 @@ proguardCache ++= Seq(
   "shapeless"
 )
 
+packagingOptions in Android := PackagingOptions(
+  List(
+    "META-INF/INDEX.LIST",
+    "META-INF/LICENSE",
+    "META-INF/LICENSE.txt",
+    "META-INF/NOTICE",
+    "META-INF/NOTICE.txt",
+    "META-INF/io.netty.versions.properties",
+    "META-INF/services/io.grpc.ManagedChannelProvider",
+    "META-INF/services/io.grpc.ServerProvider"
+  ),
+  Nil,
+  Nil
+)
+
 if (sys.env.contains("PROTIFY")) {
   new Def.SettingList(protifySettings)
 } else {

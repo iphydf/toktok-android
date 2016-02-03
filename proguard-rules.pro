@@ -2,9 +2,15 @@
 -optimizationpasses 3
 -allowaccessmodification
 
+-dontwarn android.net.http.**
+-dontwarn com.android.internal.http.**
 -dontwarn com.google.common.**
 -dontwarn com.squareup.picasso.OkHttpDownloader
+-dontwarn io.grpc.netty.*
+-dontwarn io.netty.**
 -dontwarn io.realm.**
+-dontwarn okio.*
+-dontwarn org.apache.commons.logging.impl.*
 -dontwarn org.threeten.bp.chrono.JapaneseEra
 -dontwarn org.xmlpull.v1.**
 -dontwarn scala.xml.**
