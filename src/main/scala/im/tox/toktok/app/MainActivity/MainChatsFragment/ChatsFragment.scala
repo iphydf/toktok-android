@@ -119,11 +119,11 @@ class ChatsFragment extends Fragment with ChatItemClick {
 
     override def onDestroyActionMode(mode: ActionMode): Unit = {
 
-      mAppLayout.setBackgroundColor(getResources.getColor(R.color.homeColorToolbar))
+      mAppLayout.setBackgroundColor(getResources.getColor(R.color.homeColorToolbar, null))
 
       mFab.setImageResource(R.drawable.ic_content_add_home)
-      mFab.setBackgroundTintList(ColorStateList.valueOf(getResources.getColor(R.color.basicFABColor)))
-      mFab.setImageTintList(ColorStateList.valueOf(getResources.getColor(R.color.basicFABTint)))
+      mFab.setBackgroundTintList(ColorStateList.valueOf(getResources.getColor(R.color.basicFABColor, null)))
+      mFab.setImageTintList(ColorStateList.valueOf(getResources.getColor(R.color.basicFABTint, null)))
 
       mFab.setOnClickListener(new OnClickListener {
         override def onClick(view: View): Unit = {
@@ -144,12 +144,12 @@ class ChatsFragment extends Fragment with ChatItemClick {
     override def onCreateActionMode(mode: ActionMode, menu: Menu): Boolean = {
 
       mAppLayout = getActivity.findViewById(R.id.appBarLayout).asInstanceOf[AppBarLayout]
-      mAppLayout.setBackgroundColor(getResources.getColor(R.color.backgroundColor))
+      mAppLayout.setBackgroundColor(getResources.getColor(R.color.backgroundColor, null))
 
       mFab = getActivity.findViewById(R.id.home_fab).asInstanceOf[FloatingActionButton]
-      mFab.setBackgroundTintList(ColorStateList.valueOf(getResources.getColor(R.color.textDarkColor)))
+      mFab.setBackgroundTintList(ColorStateList.valueOf(getResources.getColor(R.color.textDarkColor, null)))
       mFab.setImageResource(R.drawable.ic_action_delete)
-      mFab.setImageTintList(ColorStateList.valueOf(getResources.getColor(R.color.textWhiteColor)))
+      mFab.setImageTintList(ColorStateList.valueOf(getResources.getColor(R.color.textWhiteColor, null)))
 
       mCustomViewPager = getActivity.findViewById(R.id.home_tab_holder).asInstanceOf[CustomViewPager]
       mCustomViewPager.setSwipingEnabled(false)

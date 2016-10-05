@@ -51,7 +51,7 @@ class CallActivity extends AppCompatActivity {
     friendImgSRC = bundle.getInt("contactPhotoReference")
 
     getWindow.getDecorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
-    getWindow.setStatusBarColor(getResources.getColor(R.color.contactsTransparentBar))
+    getWindow.setStatusBarColor(getResources.getColor(R.color.contactsTransparentBar, null))
 
     mTopPainel = findViewById(R.id.call_top_painel).asInstanceOf[RelativeLayout]
     mBottomPainel = findViewById(R.id.call_bottom_painel).asInstanceOf[FrameLayout]
@@ -70,7 +70,7 @@ class CallActivity extends AppCompatActivity {
 
 
   def initOnGoingCall: Unit = {
-    mTopPainel.setBackgroundColor(getResources.getColor(R.color.callTopColor))
+    mTopPainel.setBackgroundColor(getResources.getColor(R.color.callTopColor, null))
     mTopPainel.addView(getLayoutInflater.inflate(R.layout.call_top_on_going, null))
     mBottomPainel.addView(getLayoutInflater.inflate(R.layout.call_bottom_on_going, null))
 

@@ -143,7 +143,7 @@ class MessageActivity extends AppCompatActivity with MessageClick with MessageAc
         snackView.setBackgroundResource(R.color.snackBarColor)
         snackView.setElevation(10)
         val snackText: TextView = snackView.findViewById(android.support.design.R.id.snackbar_text).asInstanceOf[TextView]
-        snackText.setTextColor(getResources.getColor(R.color.textDarkColor))
+        snackText.setTextColor(getResources.getColor(R.color.textDarkColor, null))
         snack.show()
         return true
 
@@ -169,7 +169,7 @@ class MessageActivity extends AppCompatActivity with MessageClick with MessageAc
         snackView.setBackgroundResource(R.color.snackBarColor)
         snackView.setElevation(10)
         val snackText: TextView = snackView.findViewById(android.support.design.R.id.snackbar_text).asInstanceOf[TextView]
-        snackText.setTextColor(getResources.getColor(R.color.textDarkColor))
+        snackText.setTextColor(getResources.getColor(R.color.textDarkColor, null))
         snack.show()
         return true
       }

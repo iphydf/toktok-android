@@ -1,6 +1,6 @@
 package im.tox.toktok.app
 
-class materialColors {
+class MaterialColors {
 
   final val color: List[String] = List(
     "#fde0dc",

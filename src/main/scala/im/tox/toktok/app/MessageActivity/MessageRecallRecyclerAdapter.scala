@@ -71,7 +71,7 @@ class MessageRecallRecyclerAdapter(context : Context,list: ListBuffer[Message],r
       val view = viewHolder.asInstanceOf[MessageRecallRecyclerViewHolderHeader]
 
       view.mMessageText.setText(itemMessage)
-      lp.headerDisplay = LayoutManager.LayoutParams.HEADER_STICKY  | LayoutManager.LayoutParams.HEADER_INLINE
+      //lp.headerDisplay = LayoutManager.LayoutParams.HEADER_STICKY  | LayoutManager.LayoutParams.HEADER_INLINE
       lp.isHeader = true
       lp.headerEndMarginIsAuto = false
       lp.headerStartMarginIsAuto = false

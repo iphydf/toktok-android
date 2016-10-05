@@ -10,7 +10,7 @@ import android.view.View.OnClickListener
 import android.view.{View, Window}
 import android.widget._
 import im.tox.toktok.R
-import im.tox.toktok.app.materialColors
+import im.tox.toktok.app.MaterialColors
 
 class SimpleColorDialogDesign(activity: Activity, title: String, contact_color: Int, icon: Int, color: Int, clickAction: OnClickListener) extends Dialog(activity, R.style.DialogSlideAnimation) {
 
@@ -29,7 +29,7 @@ class SimpleColorDialogDesign(activity: Activity, title: String, contact_color: 
 
     val color_recycler: RecyclerView = findViewById(R.id.simple_color_dialog_recyclerview).asInstanceOf[RecyclerView]
 
-    val colors: materialColors = new materialColors
+    val colors: MaterialColors = new MaterialColors
     color_recycler.setAdapter(new SimpleColorDialogDesignAdapter(colors.getColors()))
     color_recycler.setLayoutManager(new LinearLayoutManager(activity))
 

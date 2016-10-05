@@ -104,7 +104,7 @@ class MainActivityFragment extends Fragment {
 
     mToolbar = view.findViewById(R.id.home_toolbar).asInstanceOf[Toolbar]
 
-    getActivity.getWindow().setStatusBarColor(getResources.getColor(R.color.homeColorStatusBar));
+    getActivity.getWindow().setStatusBarColor(getResources.getColor(R.color.homeColorStatusBar, null));
 
 
     mToolbar.setNavigationOnClickListener(new OnClickListener {
